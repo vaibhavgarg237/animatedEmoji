@@ -7,11 +7,34 @@ $emoji-black-color: #000000;
 $emoji-text-color: #8a8a8a;
 
 
+#animateEmoji{
+  position: absolute;
+  animation: expandAndFade 1.5s ease-in-out forwards ;
+}
+
+@keyframes expandAndFade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    top: 50%;
+  }
+  99.99% {
+    transform: scale(3);
+    opacity: 0;
+    top: 20%;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    top: 50%;
+  }
+}
 
 .emoji {
   width: 120px;
   height: 120px;
-  margin: 15px 15px 40px;
+  // margin: 15px 15px 40px;
+margin-top: auto;
   background: $emoji-base-color;
   display: inline-block;
   border-radius: 50%;
@@ -51,10 +74,6 @@ $emoji-text-color: #8a8a8a;
 
 .emoji--like {
   background: $emoji-like-color;
-
-  &:after {
-    content: "Like";
-  }
 
   .emoji__hand {
     left: 25px;
@@ -105,10 +124,6 @@ $emoji-text-color: #8a8a8a;
 .emoji--love {
   background: $emoji-love-color;
 
-  &:after {
-    content: "Love";
-  }
-
   .emoji__heart {
     left: calc(50% - 40px);
     top: calc(50% - 40px);
@@ -139,9 +154,6 @@ $emoji-text-color: #8a8a8a;
 }
 
 .emoji--haha {
-  &:after {
-    content: "Haha";
-  }
 
   .emoji__face {
     animation: haha-face 2s linear infinite;
@@ -195,7 +207,6 @@ $emoji-text-color: #8a8a8a;
 
 .emoji--yay {
   &:after {
-    content: "Yay";
     animation: yay-reverse 1s linear infinite;
   }
 
@@ -270,9 +281,6 @@ $emoji-text-color: #8a8a8a;
 }
 
 .emoji--wow {
-  &:after {
-    content: "Wow";
-  }
 
   .emoji__face {
     animation: wow-face 3s linear infinite;
@@ -333,9 +341,6 @@ $emoji-text-color: #8a8a8a;
 }
 
 .emoji--sad {
-  &:after {
-    content: "Sad";
-  }
 
   .emoji__face {
     animation: sad-face 2s ease-in infinite;
@@ -427,9 +432,6 @@ $emoji-text-color: #8a8a8a;
   background-size: 100%;
   animation: angry-color 2s ease-in infinite;
 
-  &:after {
-    content: "Angry";
-  }
 
   .emoji__face {
     animation: angry-face 2s ease-in infinite;

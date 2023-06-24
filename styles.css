@@ -1,7 +1,29 @@
+#animateEmoji {
+  position: absolute;
+  animation: expandAndFade 1.5s ease-in-out forwards;
+}
+
+@keyframes expandAndFade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    top: 50%;
+  }
+  99.99% {
+    transform: scale(3);
+    opacity: 0;
+    top: 20%;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    top: 50%;
+  }
+}
 .emoji {
   width: 120px;
   height: 120px;
-  margin: 15px 15px 40px;
+  margin-top: auto;
   background: #ffda6a;
   display: inline-block;
   border-radius: 50%;
@@ -53,9 +75,6 @@
 .emoji--like {
   background: #548dff;
 }
-.emoji--like:after {
-  content: "Like";
-}
 .emoji--like .emoji__hand {
   left: 25px;
   bottom: 30px;
@@ -100,9 +119,6 @@
 .emoji--love {
   background: #f55064;
 }
-.emoji--love:after {
-  content: "Love";
-}
 .emoji--love .emoji__heart {
   left: calc(50% - 40px);
   top: calc(50% - 40px);
@@ -127,9 +143,6 @@
   transform-origin: 100% 100%;
 }
 
-.emoji--haha:after {
-  content: "Haha";
-}
 .emoji--haha .emoji__face {
   animation: haha-face 2s linear infinite;
 }
@@ -174,7 +187,6 @@
 }
 
 .emoji--yay:after {
-  content: "Yay";
   animation: yay-reverse 1s linear infinite;
 }
 .emoji--yay .emoji__face {
@@ -235,9 +247,6 @@
   box-shadow: -25px 0 0 0 #000000, 25px 0 0 0 #000000, -35px -2px 30px 10px #d5234c, 35px -2px 30px 10px #d5234c;
 }
 
-.emoji--wow:after {
-  content: "Wow";
-}
 .emoji--wow .emoji__face {
   animation: wow-face 3s linear infinite;
 }
@@ -287,9 +296,6 @@
   animation: wow-mouth 3s linear infinite;
 }
 
-.emoji--sad:after {
-  content: "Sad";
-}
 .emoji--sad .emoji__face {
   animation: sad-face 2s ease-in infinite;
 }
@@ -368,9 +374,6 @@
   background: linear-gradient(#d5234c -10%, #ffda6a);
   background-size: 100%;
   animation: angry-color 2s ease-in infinite;
-}
-.emoji--angry:after {
-  content: "Angry";
 }
 .emoji--angry .emoji__face {
   animation: angry-face 2s ease-in infinite;
